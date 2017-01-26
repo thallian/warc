@@ -369,8 +369,8 @@ class WARCReader:
         if self.current_payload:
             # consume all data from the current_payload before moving to next record
             self.current_payload.read()
-            self.expect(self.current_payload.fileobj, "\r\n")
-            self.expect(self.current_payload.fileobj, "\r\n")
+            self.expect(self.current_payload.fileobj, b"\r\n")
+            self.expect(self.current_payload.fileobj, b"\r\n")
             self.current_payload = None
 
     def read_record(self):

@@ -76,7 +76,7 @@ class FilePart:
             self.buf = self.buf[size:]
         else:
             size = min(size, self.length - self.offset - len(self.buf))
-            content = self.buf + self.fileobj.read(size)
+            content = self.buf + str(self.fileobj.read(size))
             self.buf = ""
         self.offset += len(content)
         return content
